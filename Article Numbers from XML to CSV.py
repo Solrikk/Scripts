@@ -18,19 +18,15 @@ for offer_elem in root.iter('offer'):
         article_number = "null"
     article_numbers.append([article_number])
 
-# Путь для сохранения файла
 save_path = r'C:\Users\Solrikk\Downloads\Doki'
 os.makedirs(save_path, exist_ok=True)
 
-# Полный путь к файлу
 file_path = os.path.join(save_path, 'offer_article_numbers.csv')
 
-# Сохраняем данные в CSV файл
 with open(file_path, 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(['article_number'])  # Записываем заголовок
 
-    # Записываем каждый артикул в отдельную строку
     for article_number in article_numbers:
         writer.writerow(article_number)
 
